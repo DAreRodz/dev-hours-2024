@@ -4,8 +4,8 @@
   "description": "Plugin to showcase the Interactivity API shipped with WP 6.5.",
   "main": "index.js",
   "scripts": {
-    "start": "wp-scripts start",
-    "build": "wp-scripts build"
+    "start": "WP_EXPERIMENTAL_MODULES=true wp-scripts start",
+    "build": "WP_EXPERIMENTAL_MODULES=true wp-scripts build"
   },
   "author": "",
   "license": "ISC",

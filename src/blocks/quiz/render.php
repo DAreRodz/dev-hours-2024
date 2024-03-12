@@ -9,6 +9,10 @@
 		</strong>
 
 		<?php echo $attributes[ 'question' ]; ?>
+
+		<button data-wp-on--click="actions.toggle">
+			<?php echo __( 'Open' ); ?>
+		</button>
 	</div>
 
 	<div data-wp-bind--hidden="!context.isOpen">

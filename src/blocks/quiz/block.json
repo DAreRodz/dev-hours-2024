@@ -28,5 +28,6 @@
   "render": "file:./render.php",
   "supports": {
     "interactivity": true
-  }
+  },
+  "viewScriptModule": "file:./view.js"
 }
