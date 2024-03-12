@@ -1,4 +1,4 @@
-import { store, getContext } from "@wordpress/interactivity";
+import { store, getContext, getElement } from "@wordpress/interactivity";
 
 const { state } = store("dev-hours/quiz", {
   state: {
@@ -15,6 +15,14 @@ const { state } = store("dev-hours/quiz", {
     toggle: () => {
       const ctx = getContext();
       state.selected = state.selected !== ctx.id ? ctx.id : null;
+    },
+  },
+  callbacks: {
+    focusOnOpen: () => {
+      const { ref } = getElement();
+      if (state.isOpen) {
+        ref.focus();
+      }
     },
   },
 });

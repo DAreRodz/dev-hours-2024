@@ -35,7 +35,7 @@ wp_interactivity_state( 'dev-hours/quiz', array(
 		id="quiz-<?php echo $unique_id; ?>"
 	>
 		<?php if ( $attributes['typeOfQuiz'] == 'boolean' ): ?>
-			<button>
+			<button data-wp-watch="callbacks.focusOnOpen">
 				<?php echo __( 'Yes' ); ?>
 			</button>
 			<button>
