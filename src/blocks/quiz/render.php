@@ -7,6 +7,12 @@ wp_interactivity_state( 'dev-hours/quiz', array(
 	'closeText'  => __( 'Close menu' ),
 	'openText'   => __( 'Open menu' ),
 	'toggleText' => __( 'Open menu' ),
+	'quizzes'    => array(
+		$unique_id => array( 
+			'current' => null, 
+			'correct' => $attributes['answer']
+		)
+	)
 ) );
 ?>
 
