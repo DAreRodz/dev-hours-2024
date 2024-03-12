@@ -1,6 +1,6 @@
 <?php
 $unique_id = substr(uniqid(), -5);
-$context   = array( 'isOpen' => false );
+$context   = array( 'id' => $unique_id );
 ?>
 
 <div
@@ -17,7 +17,7 @@ $context   = array( 'isOpen' => false );
 
 		<button
 			data-wp-on--click="actions.toggle"
-			data-wp-bind--aria-expanded="context.isOpen"
+			data-wp-bind--aria-expanded="state.isOpen"
 			aria-controls="quiz-<?php echo $unique_id; ?>"
 		>
 			<?php echo __( 'Open' ); ?>
@@ -25,7 +25,7 @@ $context   = array( 'isOpen' => false );
 	</div>
 
 	<div
-		data-wp-bind--hidden="!context.isOpen"
+		data-wp-bind--hidden="!state.isOpen"
 		id="quiz-<?php echo $unique_id; ?>"
 	>
 		<?php if ( $attributes['typeOfQuiz'] == 'boolean' ): ?>

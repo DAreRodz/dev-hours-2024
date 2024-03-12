@@ -1,10 +1,17 @@
 import { store, getContext } from "@wordpress/interactivity";
 
-store("dev-hours/quiz", {
+const { state } = store("dev-hours/quiz", {
+  state: {
+    selected: null,
+    get isOpen() {
+      const ctx = getContext();
+      return state.selected === ctx.id;
+    },
+  },
   actions: {
     toggle: () => {
       const ctx = getContext();
-      ctx.isOpen = !ctx.isOpen;
+      state.selected = ctx.id;
     },
   },
 });
