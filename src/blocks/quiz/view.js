@@ -14,6 +14,10 @@ const { state } = store("dev-hours/quiz", {
       const { thisAnswer, id } = getContext();
       return state.quizzes[id].current === thisAnswer;
     },
+    get inputAnswer() {
+      const { id } = getContext();
+      return state.quizzes[id].current || "";
+    },
   },
   actions: {
     toggle: () => {
