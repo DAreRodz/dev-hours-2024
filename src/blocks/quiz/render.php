@@ -14,6 +14,7 @@ wp_interactivity_state( 'dev-hours/quiz', array(
 	<?php echo get_block_wrapper_attributes(); ?>
 	data-wp-interactive="dev-hours/quiz"
 	<?php echo wp_interactivity_data_wp_context( $context ); ?>
+	data-wp-on--keydown="actions.closeOnEsc"
 >
 	<div>
 		<strong>

@@ -16,6 +16,13 @@ const { state } = store("dev-hours/quiz", {
       const ctx = getContext();
       state.selected = state.selected !== ctx.id ? ctx.id : null;
     },
+    closeOnEsc: (event) => {
+      if (event.key === "Escape") {
+        state.selected = null;
+        const { ref } = getElement();
+        ref.querySelector('button[aria-controls^="quiz-"]').focus();
+      }
+    },
   },
   callbacks: {
     focusOnOpen: () => {
