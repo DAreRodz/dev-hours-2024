@@ -1,6 +1,6 @@
 <?php
 $unique_id = substr(uniqid(), -5);
-$context   = array( 'id' => $unique_id );
+$context   = array( 'id' => $unique_id, 'answer' => null );
 
 wp_interactivity_state( 'dev-hours/quiz', array(
 	'selected'   => null,
@@ -36,10 +36,19 @@ wp_interactivity_state( 'dev-hours/quiz', array(
 		id="quiz-<?php echo $unique_id; ?>"
 	>
 		<?php if ( $attributes['typeOfQuiz'] == 'boolean' ): ?>
-			<button data-wp-watch="callbacks.focusOnOpen">
+			<button
+				<?php echo wp_interactivity_data_wp_context( array( 'thisAnswer' => true ) ); ?>
+				data-wp-watch="callbacks.focusOnOpen"
+				data-wp-on--click="actions.answer"
+				data-wp-class--active="state.isActive"
+			>
 				<?php echo __( 'Yes' ); ?>
 			</button>
-			<button>
+			<button
+				<?php echo wp_interactivity_data_wp_context( array( 'thisAnswer' => false ) ); ?>
+				data-wp-on--click="actions.answer"
+				data-wp-class--active="state.isActive"
+			>
 				<?php echo __( 'No' ); ?>
 			</button>
 

@@ -10,6 +10,10 @@ const { state } = store("dev-hours/quiz", {
       const { isOpen, closeText, openText } = state;
       return isOpen ? closeText : openText;
     },
+    get isActive() {
+      const { answer, thisAnswer } = getContext();
+      return answer === thisAnswer;
+    },
   },
   actions: {
     toggle: () => {
@@ -22,6 +26,10 @@ const { state } = store("dev-hours/quiz", {
         const { ref } = getElement();
         ref.querySelector('button[aria-controls^="quiz-"]').focus();
       }
+    },
+    answer: () => {
+      const ctx = getContext();
+      ctx.answer = ctx.thisAnswer;
     },
   },
   callbacks: {
