@@ -1,0 +1,17 @@
+{
+  "name": "dev-hours-2024",
+  "version": "1.0.0",
+  "description": "Plugin to showcase the Interactivity API shipped with WP 6.5.",
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
+  },
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "@wordpress/scripts": "^27.4.0",
+    "@wordpress/env": "^9.5.0"
+  }
+}
