@@ -2,6 +2,8 @@
 $state = wp_interactivity_state( 'dev-hours/quiz', array(
 	'answered'    => 0,
 	'allAnswered' => false,
+	'showAnswers' => false,
+	'correct'     => '?',
 ) );
 ?>
 
@@ -18,7 +20,14 @@ $state = wp_interactivity_state( 'dev-hours/quiz', array(
 		></span>/<?php echo count( $state['quizzes'] ); ?>
 	</div>
 	<div>
-		<button data-wp-bind--disabled="!state.allAnswered">
+		<strong><?php echo __( 'Correct' ); ?></strong>: 
+		<span data-wp-text="state.correct"></span>
+	</div>
+	<div>
+		<button
+			data-wp-bind--disabled="!state.allAnswered"
+			data-wp-on--click="actions.checkAnswers"
+		>
 			<?php echo __( 'Check your answers' ); ?>
 		</button>
 	</div>
