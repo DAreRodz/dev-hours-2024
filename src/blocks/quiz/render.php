@@ -43,7 +43,7 @@ wp_interactivity_state( 'dev-hours/quiz', array(
 			</button>
 
 		<?php elseif ( $attributes['typeOfQuiz'] === 'input'): ?>
-			<input type="text">
+			<input type="text" data-wp-watch="callbacks.focusOnOpen">
 
 		<?php endif; ?>
 	</div>
