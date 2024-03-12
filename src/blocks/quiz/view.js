@@ -2,7 +2,6 @@ import { store, getContext } from "@wordpress/interactivity";
 
 const { state } = store("dev-hours/quiz", {
   state: {
-    selected: null,
     get isOpen() {
       const ctx = getContext();
       return state.selected === ctx.id;
