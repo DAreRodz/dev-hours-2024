@@ -1,6 +1,7 @@
 <?php
 $state = wp_interactivity_state( 'dev-hours/quiz', array(
-	'answered' => 0
+	'answered'    => 0,
+	'allAnswered' => false,
 ) );
 ?>
 
@@ -15,6 +16,11 @@ $state = wp_interactivity_state( 'dev-hours/quiz', array(
 		<span
 			data-wp-text="state.answered"
 		></span>/<?php echo count( $state['quizzes'] ); ?>
+	</div>
+	<div>
+		<button data-wp-bind--disabled="!state.allAnswered">
+			<?php echo __( 'Check your answers' ); ?>
+		</button>
 	</div>
 	<hr>
 	<div>

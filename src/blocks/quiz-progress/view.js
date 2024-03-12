@@ -6,5 +6,8 @@ const { state } = store("dev-hours/quiz", {
       return Object.values(state.quizzes).filter((v) => v.current !== null)
         .length;
     },
+    get allAnswered() {
+      return state.answered === Object.keys(state.quizzes).length;
+    },
   },
 });
