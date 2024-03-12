@@ -1,4 +1,8 @@
-<div <?php echo get_block_wrapper_attributes(); ?>>
+<div
+	<?php echo get_block_wrapper_attributes(); ?>
+	data-wp-interactive="dev-hours/quiz"
+	<?php echo wp_interactivity_data_wp_context( array( 'isOpen' => false ) ); ?>
+>
 	<div>
 		<strong>
 			<?php echo __( 'Question' ) . ": "; ?>
@@ -7,7 +11,7 @@
 		<?php echo $attributes[ 'question' ]; ?>
 	</div>
 
-	<div>
+	<div data-wp-bind--hidden="!context.isOpen">
 		<?php if ( $attributes['typeOfQuiz'] == 'boolean' ): ?>
 			<button>
 				<?php echo __( 'Yes' ); ?>
