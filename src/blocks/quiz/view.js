@@ -8,7 +8,8 @@ const { state } = store("dev-hours/quiz", {
       return state.selected === ctx.id;
     },
     get toggleText() {
-      return state.isOpen ? "Close" : "Open";
+      const { isOpen, closeText, openText } = state;
+      return isOpen ? closeText : openText;
     },
   },
   actions: {
