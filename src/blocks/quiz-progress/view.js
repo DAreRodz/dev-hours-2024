@@ -15,6 +15,9 @@ const { state } = store("dev-hours/quiz", {
             .length
         : "?";
     },
+    get allCorrect() {
+      return state.correct === Object.keys(state.quizzes).length;
+    },
   },
   actions: {
     checkAnswers: () => {

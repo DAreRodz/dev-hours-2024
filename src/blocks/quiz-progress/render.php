@@ -4,6 +4,7 @@ $state = wp_interactivity_state( 'dev-hours/quiz', array(
 	'allAnswered' => false,
 	'showAnswers' => false,
 	'correct'     => '?',
+	'allCorrect'  => false,
 ) );
 ?>
 
@@ -22,6 +23,9 @@ $state = wp_interactivity_state( 'dev-hours/quiz', array(
 	<div>
 		<strong><?php echo __( 'Correct' ); ?></strong>: 
 		<span data-wp-text="state.correct"></span>
+		<span data-wp-bind--hidden="!state.allCorrect">
+			<?php echo __( 'All correct, congratulations! 🎉' ); ?>
+		</span>
 	</div>
 	<div>
 		<button
