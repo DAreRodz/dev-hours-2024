@@ -27,11 +27,15 @@ const { state } = store("dev-hours/quiz", {
         ref.querySelector('button[aria-controls^="quiz-"]').focus();
       }
     },
-    answer: () => {
+    answerBoolean: () => {
       const ctx = getContext();
       const { id, thisAnswer } = ctx;
       const quiz = state.quizzes[id];
       quiz.current = quiz.current !== thisAnswer ? thisAnswer : null;
+    },
+    answerInput: (event) => {
+      const { id } = getContext();
+      state.quizzes[id].current = event.target.value || null;
     },
   },
   callbacks: {

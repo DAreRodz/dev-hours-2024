@@ -45,21 +45,25 @@ wp_interactivity_state( 'dev-hours/quiz', array(
 			<button
 				<?php echo wp_interactivity_data_wp_context( array( 'thisAnswer' => true ) ); ?>
 				data-wp-watch="callbacks.focusOnOpen"
-				data-wp-on--click="actions.answer"
+				data-wp-on--click="actions.answerBoolean"
 				data-wp-class--active="state.isActive"
 			>
 				<?php echo __( 'Yes' ); ?>
 			</button>
 			<button
 				<?php echo wp_interactivity_data_wp_context( array( 'thisAnswer' => false ) ); ?>
-				data-wp-on--click="actions.answer"
+				data-wp-on--click="actions.answerBoolean"
 				data-wp-class--active="state.isActive"
 			>
 				<?php echo __( 'No' ); ?>
 			</button>
 
 		<?php elseif ( $attributes['typeOfQuiz'] === 'input'): ?>
-			<input type="text" data-wp-watch="callbacks.focusOnOpen">
+			<input
+				type="text"
+				data-wp-watch="callbacks.focusOnOpen"
+				data-wp-on--input="actions.answerInput"
+			>
 
 		<?php endif; ?>
 	</div>
