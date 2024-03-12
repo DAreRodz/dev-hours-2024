@@ -11,7 +11,7 @@ const { state } = store("dev-hours/quiz", {
   actions: {
     toggle: () => {
       const ctx = getContext();
-      state.selected = ctx.id;
+      state.selected = state.selected !== ctx.id ? ctx.id : null;
     },
   },
 });
