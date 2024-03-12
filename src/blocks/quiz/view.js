@@ -7,6 +7,9 @@ const { state } = store("dev-hours/quiz", {
       const ctx = getContext();
       return state.selected === ctx.id;
     },
+    get toggleText() {
+      return state.isOpen ? "Close" : "Open";
+    },
   },
   actions: {
     toggle: () => {

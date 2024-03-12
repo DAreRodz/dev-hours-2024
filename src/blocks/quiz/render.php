@@ -19,9 +19,8 @@ $context   = array( 'id' => $unique_id );
 			data-wp-on--click="actions.toggle"
 			data-wp-bind--aria-expanded="state.isOpen"
 			aria-controls="quiz-<?php echo $unique_id; ?>"
-		>
-			<?php echo __( 'Open' ); ?>
-		</button>
+			data-wp-text="state.toggleText"
+		></button>
 	</div>
 
 	<div
