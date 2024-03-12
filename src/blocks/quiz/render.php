@@ -1,6 +1,6 @@
 <?php
 $unique_id = substr(uniqid(), -5);
-$context   = array( 'id' => $unique_id, 'answer' => null );
+$context   = array( 'id' => $unique_id );
 
 wp_interactivity_state( 'dev-hours/quiz', array(
 	'selected'   => null,

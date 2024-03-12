@@ -9,5 +9,9 @@
   "description": "Show the quiz progress and check the answers",
   "textdomain": "dev-hours",
   "editorScript": "file:./index.js",
-  "render": "file:./render.php"
+  "render": "file:./render.php",
+  "supports": {
+    "interactivity": true
+  },
+  "viewScriptModule": "file:./view.js"
 }

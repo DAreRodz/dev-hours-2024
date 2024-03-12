@@ -11,8 +11,8 @@ const { state } = store("dev-hours/quiz", {
       return isOpen ? closeText : openText;
     },
     get isActive() {
-      const { answer, thisAnswer } = getContext();
-      return answer === thisAnswer;
+      const { thisAnswer, id } = getContext();
+      return state.quizzes[id].current === thisAnswer;
     },
   },
   actions: {
@@ -29,7 +29,9 @@ const { state } = store("dev-hours/quiz", {
     },
     answer: () => {
       const ctx = getContext();
-      ctx.answer = ctx.thisAnswer;
+      const { id, thisAnswer } = ctx;
+      const quiz = state.quizzes[id];
+      quiz.current = quiz.current !== thisAnswer ? thisAnswer : null;
     },
   },
   callbacks: {
